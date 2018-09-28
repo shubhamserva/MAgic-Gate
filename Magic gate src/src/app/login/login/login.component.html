@@ -1,0 +1,83 @@
+<p>Welcome Again</p> 
+<p>wefgwegwegwe</p>
+<a href ="forum">open forum</a>
+<div class="text-center social-btn">
+
+<button  (click)="signInWithFB()" class="fa fa-facebook" >Sign in with Facebook</button>
+<button (click)="signInWithGoogle()" class="fa fa-google-plus" class="btn btn-danger ">Signin in with Google</button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="text-center social-btn">
+        <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+        <a href="#" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a>
+        <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+      </div>
+    </div>
+    </div>
+</div>
+<div class="container">
+<img src="{{user.photoUrl}}"> 
+<div>
+<h4>{{ user.name }}</h4>
+<p>{{ user.email }}</p>
+</div>
+
+<button (click)="signOut()">SignOut</button>
+</div>
+
+<div style="margin-top:20px; visibility: hidden; position: fixed; right :0; z-index: 999; bottom: 128px" #iframe>
+<iframe
+allow="microphone;"
+width="250"
+height="330"
+src="https://console.dialogflow.com/api-client/demo/embedded/277480a2-bceb-467a-9732-c2a733cb9328">
+</iframe>
+
+</div>
+<p>Practicing modal login</p>
+
+<img style="position:fixed;bottom: 0; right: 0 ; z-index: 998; width: 128px; height: 128px;" href="#"  src="/src/assets/photos/chatbot.png" (click)="visibleIframe = !visibleIframe; iframe.style.visibility= (visibleIframe ? ('visible') : ('hidden'))">
+
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                  <i class="fa fa-user prefix grey-text"></i>
+                  <input type="text" id="orangeForm-name" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+              </div>
+              <div class="md-form mb-5">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <input type="email" id="orangeForm-email" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+              </div>
+
+              <div class="md-form mb-4">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <input type="password" id="orangeForm-pass" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+              </div>
+
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-deep-orange">Sign up</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Launch Modal Register Form</a>
+</div>
+
+
